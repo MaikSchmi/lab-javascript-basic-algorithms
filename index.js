@@ -99,11 +99,11 @@ wordCount = longText.split(" ");
 console.log(`The lorem text has a total of ${wordCount.length} words in it.`);
 
 // Count "et"
-for (let i = 0; i < longText.length; i++) {
-  if ((longText[i] + longText[i + 1]).toLowerCase() === "et") {
-    if (longText[i - 1] === " " && longText [i + 2] === " ") {
-      etCount++;  
-    }
+for ( let i = 0; i < wordCount.length; i++ ){
+  const twoChar = wordCount[i][0] + wordCount[i][1];
+
+  if (twoChar === "et") {
+    etCount ++;
   }
 }
 console.log(`The word "et" appears ${etCount} times in the text.`);
