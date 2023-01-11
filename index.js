@@ -86,3 +86,25 @@ if (hacker0start > hacker1start) {
 } else {
     console.log(str2);
 }
+
+// Bonus 1
+
+const longText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed turpis luctus, aliquam diam vel, sodales orci. Pellentesque ultrices interdum urna, volutpat gravida odio mollis id. Aenean semper, nisl quis laoreet efficitur, orci nisi fringilla orci, ut tincidunt ante sapien in risus. Aliquam non convallis tortor. Duis hendrerit vitae lacus non placerat. Duis turpis risus, accumsan quis mollis sit amet, semper id ligula. Morbi lorem risus, semper in volutpat quis, suscipit ut nibh. Nulla vitae quam venenatis, imperdiet arcu et, convallis ipsum. Morbi malesuada est eu magna sollicitudin sollicitudin. Proin purus nisi, vulputate vitae elementum non, semper sed nunc. Curabitur bibendum mi ante, sit amet lobortis diam vestibulum quis. Mauris sapien mauris, feugiat et pulvinar ac, hendrerit eget ex. Mauris iaculis luctus lectus, eu auctor ex pharetra non. Curabitur libero purus, molestie nec ante ut, pharetra finibus ipsum. Praesent id dolor non leo facilisis iaculis. Maecenas commodo ac lacus eu blandit. Phasellus tincidunt diam quis tortor bibendum tristique. Vivamus vel placerat diam. Phasellus sit amet mauris quis urna euismod dignissim. Etiam cursus, ante euismod sodales ultrices, quam ex pulvinar ligula, ac imperdiet est risus vel turpis. In a accumsan odio. Sed ut dignissim leo, non maximus turpis. Aliquam quis pulvinar sapien. Sed viverra eget nunc in convallis. Vestibulum id mattis diam, sed dapibus augue. Curabitur efficitur efficitur purus non finibus. Sed accumsan libero vitae justo convallis, et feugiat justo lobortis. Mauris et rutrum lacus. Aliquam pulvinar metus nec mi consequat, ac iaculis nibh cursus. Praesent nec mi interdum diam dignissim aliquet ut pretium leo. Duis tortor lectus, dignissim ut ultricies sed, convallis ut sem. Duis dapibus ex ipsum, in imperdiet ante blandit eget. Integer dignissim arcu ac arcu malesuada, vitae auctor orci lacinia. Nam vestibulum malesuada elit ac consequat. Pellentesque pretium libero eget erat eleifend maximus. Aliquam feugiat sapien rutrum, fermentum erat id, egestas erat. Mauris sit amet lectus sit amet elit luctus malesuada. Proin eu posuere arcu. Vivamus ultricies mi est, et condimentum diam auctor a. Integer nec dui eget lacus pretium interdum a eu lectus. Mauris ultrices ultrices tortor vitae condimentum. Integer feugiat sollicitudin bibendum. Curabitur metus dolor, tristique quis commodo ut, commodo interdum eros. Donec volutpat, dui id accumsan malesuada, leo libero dapibus mauris, eu efficitur dui ex id augue. Mauris rutrum sit amet lorem vel venenatis. Mauris ipsum dolor, lobortis sit amet eros sed, consequat aliquam tellus. Duis tincidunt molestie sollicitudin. Suspendisse augue velit, mollis vitae mauris tempor, aliquam euismod nisi. Quisque aliquam velit ac elit luctus luctus.`;
+
+let wordCount;
+let etCount = 0;
+
+// Count words
+wordCount = longText.split(" ");
+console.log(`The lorem text has a total of ${wordCount.length} words in it.`);
+
+// Count "et"
+for (let i = 0; i < longText.length; i++) {
+  if ((longText[i] + longText[i + 1]).toLowerCase() === "et") {
+    if (longText[i - 1] === " " && longText [i + 2] === " ") {
+      etCount++;  
+    }
+  }
+}
+console.log(`The word "et" appears ${etCount} times in the text.`);
+
