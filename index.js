@@ -108,3 +108,35 @@ for (let i = 0; i < longText.length; i++) {
 }
 console.log(`The word "et" appears ${etCount} times in the text.`);
 
+
+
+// Bonus 2
+const textToCheck =  "No 'x' in Nixon";
+let modifiedText = "";
+
+// Remove any non-alphabetical chars
+for (let i = 0; i < textToCheck.length; i++) {
+  for (let j = 0; j < letterArr.length; j++) {
+    if (textToCheck[i].toUpperCase() === letterArr[j].toUpperCase()) {
+      modifiedText += textToCheck[i];
+    }
+  }
+}
+
+const textStart = 0;
+const textEnd = modifiedText.length;
+let isPalindrome = true;
+
+// Compare chars from beginning to end 
+for (let i = 0; i < textEnd; i++) {
+  if (modifiedText[i].toUpperCase() !== modifiedText[textEnd - i - 1].toUpperCase()) {
+    isPalindrome = false;
+  }
+}
+
+// Output result
+if (isPalindrome) {
+  console.log(`The sentence "${textToCheck}" is a Palindrome!`);
+} else {
+  console.log(`The sentence "${textToCheck}" is NOT a Palindrome!`)
+}
